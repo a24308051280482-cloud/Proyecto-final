@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Luckiest Guy", sans-serif;
+            background-color: #FAC78C;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgb(245, 219, 191);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #3D382D;
+            font-family: 'Luckiest Guy', sans-serif;
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 40px 20px;
+            flex: 1;
+        }
+
+        .form-container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(245, 239, 228, 0.7);
+            border-top: 6px solid #F2D194;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E0DAD0;
+            border-radius: 6px;
+            font-family: "Luckiest Guy", sans-serif;
+            font-size: 14px;
+            background-color: #FAF9F7;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #CAC09E;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(202, 190, 158, 0.4);
+        }
+
+        .btn-submit {
+            background-color: #CAB89E;
+            color: black;
+            border: none;
+            padding: 14px 15px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: "Luckiest Guy", sans-serif;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #B3A182;
+        }
+
+        .btn-back {
+            display: inline-block;
+            text-align: center;
+            margin-top: 25px;
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .btn-back:hover {
+            color: #B39D82;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #F3F1ED;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #78736A;
+        }
+
+        footer p {
+            margin: 4px 0;
+            font-family: 'Luckiest Guy', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Nuestros Medicos Especializados en su cuidado</h1>
+    </header>
+
+    <main>
+        <div class="top-bar">
+            <h2>Doctores registrados</h2>
+            <a href="/Medicos/nuevo" class="btn-nuevo">+ Nuevo doctor</a>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre(s)</th>
+                        <th>Tipo de sangre</th>
+                        <th>Edad</th>
+                        <th>Sexo</th>
+                        <th>Turno</th>
+                        <th>Teléfono</th>
+                        <th>Especialidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in doctores %}
+                    <tr>
+                        <td>{{ d.id_doctor }}</td>
+                        <td>{{ d.nombre }}</td>
+                        <td>{{ d.Tipo_de_sangre }}</td>
+                        <td>{{ d.edad }}</td>
+                        <td>{{ d.sexo }}</td>
+                        <td>{{ d.turno }}</td>
+                        <td>{{ d.telefono }}</td>
+                        <td>{{ d.especialidad }}</td>
+                        <td>
+                            <a href="/Medicos/editar/{{ d.id_doctor }}"
+                                style="color: #333; margin-right: 10px; text-decoration: none;">✏️ Editar</a>
+                            <a href="/Medicos/eliminar/{{ d.id_doctor }}"
+                                onclick="return confirm('¿Seguro que deseas eliminar este médico?')"
+                                style="color: red; text-decoration: none;">❌ Eliminar</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="9" class="no-doctores">No hay doctores registrados aún.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <a href="/" class="btn-back">Volver al Inicio</a>
+    </main>
+
+    <footer>
+        <p>Armando Eliseo Alvarez Carreon - Programación</p>
+        <p>24308051280589 - 4-I</p>
+    </footer>
+
+</body>
+
+</html>

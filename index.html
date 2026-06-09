@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hospital e.s.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Luckiest Guy", sans-serif;
+            background-color: #FAC78C;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgb(245, 219, 191);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            float: left;
+            width: 10%;
+            height: 197vh;
+            background: #F0BD75;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 90%;
+            background-color: #f1f1f1;
+
+        }
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #F3F1ED;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #78736A;
+        }
+
+        @media (max-width: 600px) {
+
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Hospital E.S.</h2>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#01">Sobre nosotros</a><br><br></li>
+                <li><a href="#02">Personal medico</a><br><br></li>
+                <li><a href="#03">Contactos</a><br><br></li>
+                <li><a href="/Pacientes">Pacientes</a></li>
+                <li><a href="/Medicos">Doctores</a></li>
+                <li><a href="/Seguimiento">Citas</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h1 id="01">Acerca de nosotros</h1>
+            <p>Hospital E.S. es nuestro gran aliado "todoterreno". Al ser un hospital general, está equipado para
+                atender prácticamente cualquier necesidad médica: desde una fractura jugando al fútbol un domingo, hasta
+                cirugías de alta complejidad, consultas de rutina o el nacimiento de un bebé. Si algo te pasa, este es
+                tu lugar seguro.<br> </p>
+            <h2>El Mapa del Hospital E.S.: Sus áreas clave</h2>
+            <p>Para funcionar a la perfección, el hospital se divide en cinco zonas estratégicas:</p>
+            <ul>
+                <li>Urgencias: El corazón de la adrenalina. Funciona mediante Triage (un sistema que prioriza la
+                    gravedad del paciente, no el orden de llegada).</li>
+                <li>Hospitalización: Las plantas de habitaciones donde los pacientes se recuperan con cuidados
+                    constantes.</li>
+                <li>Quirófanos: Zonas de máxima esterilidad y tecnología de punta donde se realizan las cirugías.</li>
+                <li>Consultas Externas: El área de revisiones programadas con especialistas (cardiólogos, pediatras,
+                    dermatólogos...).</li>
+                <li>Cuidados Intensivos (UCI): Vigilancia médica las 24 horas para los pacientes más críticos.</li>
+            </ul>
+            <h1 id="02">Personal medico</h1>
+            <p>A continuacion tenemos a nuestro querido personal medico listo para su servicio:</p>
+            <div class="table-container">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Especialidad</th>
+                            <th>Edad</th>
+                            <th>Género</th>
+                            <th>Grupo Sanguíneo</th>
+                            <th>Teléfono</th>
+                            <th>Turno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <strong>
+                                <td>Ricardo Meza</td>
+                            </strong>
+                            <td>Cardiología</td>
+                            <td>52</td>
+                            <td>M</td>
+                            <td>O+</td>
+                            <td>+525541230099</td>
+                            <td><span class="badge-turno matutino">Matutino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Elisa Kuri</td>
+                            </strong>
+                            <td>Pediatría</td>
+                            <td>38</td>
+                            <td>F</td>
+                            <td>A-</td>
+                            <td>+34611223344</td>
+                            <td><span class="badge-turno vespertino">Vespertino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Mónica Tovar</td>
+                            </strong>
+                            <td>Oncología</td>
+                            <td>41</td>
+                            <td>F</td>
+                            <td>AB+</td>
+                            <td>+56977889900</td>
+                            <td><span class="badge-turno matutino">Matutino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Gael Ordóñez</td>
+                            </strong>
+                            <td>Traumatología</td>
+                            <td>35</td>
+                            <td>M</td>
+                            <td>O-</td>
+                            <td>+573114567890</td>
+                            <td><span class="badge-turno vespertino">Vespertino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Saraí Casal</td>
+                            </strong>
+                            <td>Ginecología</td>
+                            <td>44</td>
+                            <td>F</td>
+                            <td>A+</td>
+                            <td>+50677665544</td>
+                            <td><span class="badge-turno matutino">Matutino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Fabio Leone</td>
+                            </strong>
+                            <td>Psiquiatría</td>
+                            <td>60</td>
+                            <td>M</td>
+                            <td>B-</td>
+                            <td>+33788990011</td>
+                            <td><span class="badge-turno vespertino">Vespertino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Inés Peralta</td>
+                            </strong>
+                            <td>Dermatología</td>
+                            <td>32</td>
+                            <td>F</td>
+                            <td>O+</td>
+                            <td>+51922334455</td>
+                            <td><span class="badge-turno matutino">Matutino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Regina Soto</td>
+                            </strong>
+                            <td>Endocrinología</td>
+                            <td>39</td>
+                            <td>F</td>
+                            <td>A-</td>
+                            <td>+528111223344</td>
+                            <td><span class="badge-turno vespertino">Vespertino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Omar Benavides</td>
+                            </strong>
+                            <td>Urología</td>
+                            <td>53</td>
+                            <td>M</td>
+                            <td>O+</td>
+                            <td>+50244332211</td>
+                            <td><span class="badge-turno matutino">Matutino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Celia Rivas</td>
+                            </strong>
+                            <td>Oftalmología</td>
+                            <td>29</td>
+                            <td>F</td>
+                            <td>B+</td>
+                            <td>+59165544332</td>
+                            <td><span class="badge-turno vespertino">Vespertino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Nora Pinedo</td>
+                            </strong>
+                            <td>Hematología</td>
+                            <td>51</td>
+                            <td>F</td>
+                            <td>O-</td>
+                            <td>+34677889900</td>
+                            <td><span class="badge-turno matutino">Matutino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Iván Barroso</td>
+                            </strong>
+                            <td>Neumología</td>
+                            <td>36</td>
+                            <td>M</td>
+                            <td>B-</td>
+                            <td>+523311229988</td>
+                            <td><span class="badge-turno vespertino">Vespertino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Julia Maza</td>
+                            </strong>
+                            <td>Reumatología</td>
+                            <td>43</td>
+                            <td>F</td>
+                            <td>AB+</td>
+                            <td>+56299887766</td>
+                            <td><span class="badge-turno matutino">Matutino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Elena Garzón</td>
+                            </strong>
+                            <td>Nefrología</td>
+                            <td>40</td>
+                            <td>F</td>
+                            <td>A+</td>
+                            <td>+525533445566</td>
+                            <td><span class="badge-turno vespertino">Vespertino</span></td>
+                        </tr>
+                        <tr>
+                            <strong>
+                                <td>Sofía Terán</td>
+                            </strong>
+                            <td>Geriatría</td>
+                            <td>37</td>
+                            <td>F</td>
+                            <td>O-</td>
+                            <td>+51944556677</td>
+                            <td><span class="badge-turno matutino">Matutino</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h1 id="03">Contactos</h1>
+            <h3>Ubicación Principal</h3>
+            <div class="info-item">
+                <span class="info-label">Dirección:</span>
+                <span class="info-value">Av. de la Salud #405, Colonia Médica, Ciudad de México, C.P. 06700.</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Referencias:</span>
+                <span class="info-value">A un costado del Parque Central (Estación de Metro "Hospitales").
+                    Estacionamiento vigilado 24/7 disponible.</span>
+                <h3>Líneas Telefónicas</h3>
+                <div class="info-item">
+                    <span class="info-label">Conmutador:</span>
+                    <span class="info-value">+52 (55) 5123-0000</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Citas Médicas:</span>
+                    <span class="info-value">+52 (55) 5123-0011 <small style="color: #718096;">(Lun a Sáb: 7:00 am -
+                            8:00 pm)</small></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">WhatsApp:</span>
+                    <span class="info-value">+52 55 4123-0099</span>
+                </div>
+
+                <div class="urgencias">
+                    <p>Línea Directa de Urgencias: +52 (55) 5123-0911 (Atención médica inmediata las 24 horas)</p>
+                </div>
+
+                <h3>Redes Sociales Oficiales</h3>
+                <p style="font-size: 14px; color: #718096; margin-bottom: 12px;">Síguenos para consejos de salud,
+                    prevención y transmisiones con especialistas:</p>
+
+                <div class="social-grid">
+                    <a href="https://facebook.com" target="_blank" class="social-link">Facebook</a>
+                    <a href="https://instagram.com" target="_blank" class="social-link">Instagram</a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link">LinkedIn</a>
+                    <a href="https://youtube.com" target="_blank" class="social-link">YouTube</a>
+                </div>
+        </article>
+    </section>
+
+    <footer>
+        <p>Armando Eliseo Alvarez Carreon 24308051280428 4ºI Programacion</p>
+    </footer>
+
+</body>
+
+</html>
